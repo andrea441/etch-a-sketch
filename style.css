@@ -11,6 +11,7 @@ body {
 }
 
 #grid {
+    --size: 16;
     display: flex;
     flex-wrap: wrap;
     height: 600px;
@@ -21,6 +22,10 @@ body {
 .cell {
     box-sizing: border-box;
     border: 1px solid black;
-    height: 37.5px;
-    width: 37.5px;
+    flex: 0 0 calc(100% / var(--size));
+    aspect-ratio: 1 / 1;
+}
+
+.colored {
+    background-color: gray;
 }
