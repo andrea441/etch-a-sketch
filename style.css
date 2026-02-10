@@ -42,18 +42,14 @@ button {
     flex-wrap: wrap;
     height: 600px;
     width: 600px;
-    border: 1px solid #1b263b;;
+    border: 1px solid #1b263b;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .cell {
-    background-color: white ;
+    background-color: white;
     box-sizing: border-box;
     border: 1px solid #1b263b;;
     flex: 0 0 calc(100% / var(--size));
     aspect-ratio: 1 / 1;
-}
-
-.colored {
-    background-color: #778da9;
-    border: 1px solid #415a77;
 }
