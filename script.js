@@ -1,5 +1,6 @@
 const grid = document.querySelector('#grid');
 const sizeButton = document.querySelector('#size');
+const restartButton = document.querySelector('#restart');
 
 function drawGrid(size = 16) {
     grid.textContent = '';
@@ -27,6 +28,10 @@ sizeButton.addEventListener('click', () => {
     } else {
         alert('Please enter a valid number between 1 and 100');
     }
+})
+
+restartButton.addEventListener('click', () => {
+    drawGrid();
 })
 
 drawGrid();
