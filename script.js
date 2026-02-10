@@ -28,12 +28,12 @@ function drawGrid(size = currentSize) {
 grid.addEventListener('mouseover', (e) => {
     if (e.target.classList.contains('cell')) {
         const cell = e.target;
-        if (cell.classList.contains('colored')) {
-            // add logic for darkening effect
+        if (cell.classList.contains('colored') && Number(cell.style.opacity) < 1) {
+             cell.style.opacity = Number(cell.style.opacity) + 0.1;
         }
         else if (!cell.classList.contains('colored')) {
-            const randomColor = getRandomColor();
-            cell.style.backgroundColor = randomColor;
+            cell.style.backgroundColor = getRandomColor();
+            cell.style.opacity = 0.1;
             cell.classList.add('colored');
         }
     }

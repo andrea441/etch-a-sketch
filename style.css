@@ -36,20 +36,23 @@ button {
     cursor: pointer;
 }
 
+#grid-container {
+    border: 50px solid rgb(170, 1, 1);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
 #grid {
     --size: 16;
     display: flex;
     flex-wrap: wrap;
     height: 600px;
     width: 600px;
-    border: 1px solid #1b263b;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    background-color: white;
 }
 
 .cell {
-    background-color: white;
     box-sizing: border-box;
-    border: 1px solid #1b263b;;
+    /*border: 1px solid #1b263b;*/
     flex: 0 0 calc(100% / var(--size));
     aspect-ratio: 1 / 1;
 }
