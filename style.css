@@ -28,4 +28,5 @@ body {
 
 .colored {
     background-color: gray;
+    border: 1px solid rgb(63, 63, 63)
 }

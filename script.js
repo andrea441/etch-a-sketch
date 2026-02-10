@@ -1,9 +1,12 @@
-function drawGrid(size) {
+const grid = document.querySelector('#grid');
+const sizeButton = document.querySelector('#size');
+
+function drawGrid(size = 16) {
     grid.textContent = '';
 
     grid.style.setProperty('--size', size);
 
-    totalSquares = size ** 2;
+    const totalSquares = size ** 2;
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement('div');
         square.classList.add('cell');
@@ -11,27 +14,19 @@ function drawGrid(size) {
     }
 }
 
-// Select the grid container
-const grid = document.querySelector('#grid');
-
-// Create the grid
-for (let i = 0; i < 256; i++) {
-    const square = document.createElement('div');
-    square.classList.add('cell');
-    grid.appendChild(square);
-}
-
-// Add functionality to the cells
-const cells = document.querySelectorAll('.cell');
-cells.forEach((cell) => {
-    cell.addEventListener('mouseover', () => {
-        cell.classList.add('colored');
-    });
+grid.addEventListener('mouseover', (e) => {
+    if (e.target.classList.contains('cell')) {
+        e.target.classList.add('colored');
+    }
 })
 
-// Add functionality to the button
-const sizeBtn = document.querySelector('#size');
-sizeBtn.addEventListener('click', () => {
-    size = prompt('Choose the new grid size: ');
-    drawGrid(size);
+sizeButton.addEventListener('click', () => {
+    const input = +prompt('Choose the new grid size: ');
+    if (Number.isInteger(input) && input > 0 && input <= 100) {
+        drawGrid(input);
+    } else {
+        alert('Please enter a valid number between 1 and 100');
+    }
 })
+
+drawGrid();
